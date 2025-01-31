@@ -16,5 +16,12 @@ export const updateUser = async (user) => {
 };
 
 export const deleteUser = async (id) => {
-  await fetch(`${API_URL}/${id}`, { method: "DELETE" });
+
+  try{
+    await fetch(`${API_URL}/${id}`, { method: "DELETE" });
+    console.log(id, " Updated successfully");
+  }
+  catch(error){
+    console.log("Error:",error);
+  }
 };
